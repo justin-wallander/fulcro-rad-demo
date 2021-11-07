@@ -1,7 +1,7 @@
 {:paths   ["src/shared"]
 
  :deps    {com.fulcrologic/fulcro                 {:mvn/version "3.5.6"}
-           com.fulcrologic/fulcro-rad #_{:mvn/version "1.0.31"}
+           com.fulcrologic/fulcro-rad           #_{:mvn/version "1.0.31"}
                                                   {:git/url "https://github.com/fulcrologic/fulcro-rad.git"
                                                    :sha     "22c6e417eded18e13f772d855cae4de4d2c149b3"}
            com.fulcrologic/fulcro-rad-semantic-ui {:mvn/version "1.1.8"}
@@ -10,8 +10,11 @@
            edn-query-language/eql                 {:mvn/version "1.0.1"}
            com.taoensso/encore                    {:mvn/version "3.1.0"}
            com.fulcrologic/guardrails             {:mvn/version "1.1.5"}
+           com.wsscode/pathom-viz-connector       {:mvn/version "2021.04.20"}
+           com.wsscode/pathom3                    {:mvn/version "2021.10.20-alpha"}
 
            org.postgresql/postgresql              {:mvn/version "42.2.8"}
+           gorillalabs/neo4j-clj                  {:mvn/version "4.1.2"}
 
            ;; Performance checks
            com.taoensso/tufte                     {:mvn/version "2.1.0"}
@@ -21,7 +24,7 @@
            hiccup/hiccup                          {:mvn/version "1.0.5"}
            ring/ring-defaults                     {:mvn/version "0.3.2"}
            ring/ring-core                         {:mvn/version "1.8.1"}
-           http-kit/http-kit                      {:mvn/version "2.5.0"}
+           http-kit/http-kit                      {:mvn/version "2.5.3"}
 
            ;; Unified logging for server
            com.taoensso/timbre                    {:mvn/version "5.0.0"}

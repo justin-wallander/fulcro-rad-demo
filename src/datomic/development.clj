@@ -1,22 +1,25 @@
 (ns development
   (:require
-    [clojure.pprint :refer [pprint]]
-    [clojure.repl :refer [doc source]]
-    [clojure.tools.namespace.repl :as tools-ns :refer [disable-reload! refresh clear set-refresh-dirs]]
-    [com.example.components.datomic :refer [datomic-connections]]
-    [com.example.components.ring-middleware]
-    [com.example.components.server]
-    [com.example.model.seed :as seed]
-    [com.example.model.account :as account]
-    [com.example.model.address :as address]
-    [com.fulcrologic.rad.ids :refer [new-uuid]]
-    [com.fulcrologic.rad.database-adapters.datomic :as datomic]
-    [com.fulcrologic.rad.resolvers :as res]
-    [mount.core :as mount]
-    [taoensso.timbre :as log]
-    [datomic.api :as d]
-    [com.fulcrologic.rad.attributes :as attr]
-    [com.fulcrologic.rad.type-support.date-time :as dt]))
+   [clojure.pprint :refer [pprint]]
+   [clojure.repl :refer [doc source]]
+   [clojure.tools.namespace.repl :as tools-ns :refer [disable-reload! refresh clear set-refresh-dirs]]
+   [com.example.components.datomic :refer [datomic-connections]]
+   [com.example.components.ring-middleware]
+   [com.example.components.server]
+   [com.example.model.seed :as seed]
+   [com.example.model.account :as account]
+   [com.example.model.address :as address]
+   [com.fulcrologic.rad.ids :refer [new-uuid]]
+   [com.fulcrologic.rad.database-adapters.datomic :as datomic]
+   [com.fulcrologic.rad.resolvers :as res]
+   [mount.core :as mount]
+   [taoensso.timbre :as log]
+   [datomic.api :as d]
+   [com.fulcrologic.rad.attributes :as attr]
+   [com.fulcrologic.rad.type-support.date-time :as dt]
+   [org.httpkit.sni-client :as sni-client]))
+;; [org.httpkit.sni-client :as sni-client]
+(alter-var-root #'org.httpkit.client/*default-client* (fn [_] sni-client/default-client))
 
 (set-refresh-dirs "src/main" "src/datomic" "src/dev" "src/shared")
 
